@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartTask</title>
+    <link href="/public/build/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-primary-color font-vazir">
+    <div class="container 2xl:max-w-screen-2xl mx-auto">
+        <!-- title Course -->
+        <div class="mt-28 mb-12 text-center md:text-right md:px-4">
+            <span class=" text-lg md:text-xl font-extrabold text-slate">سبد دوره های شما</span>
+        </div>
+        <div class="grid grid-cols-12">
+            <div class="px-4 lg:pr-4 lg:pl-2 mb-14 col-span-12 md:col-span-8 lg:col-span-10 row-span-2  ">
+                <!--course Cart mobil&Desktop -->
+                <div x-data="{ products: [
+            { id: 1,title:'دوره حرفه ای متخصص ری اکت', price:'١,٤٥٦,٧٨٩',image:'/assets/images/download.png' },
+            { id: 2,title:'دوره حرفه ای تیلویند',price:'٢,٤٥٦,٧٨٩',image:'/assets/images/tailwind2.png' },
+            { id: 3,title:'دوره پیشرفته جاوا اسکریپت',price:'٦,٧٤٥,٧٨٩',image:'/assets/images/download (1).png' },
+            { id: 4,title:'دوره طراحی وب رسپانسیو',price:'٧٤٥,٧٨٩',image:'/assets/images/responsive.png' },
+            ]}" class="grid lg:grid-cols-2 gap-y-3 lg:gap-2">
+                    <template x-for="product in products" :key="product.id">
+                        <div
+                            class="flex  shadow-[0_-4px_8px_0_rgba(0,0,0,0.1)] bg-white rounded-lg p-2   md:p-3 lg:p-2">
+                            <!-- image course -->
+                            <div class="flex rounded-lg w-14   md:w-16 lg:w-14 h-auto overflow-hidden">
+                                <img class="w-full h-auto" :src="product.image" alt="">
+                            </div>
+                            <div class="flex flex-col items-center justify-center md:flex-row md:gap-x-4 lg:gap-x-0 gap-y-1 md:gap-y-3 lg:gap-y-5 mr-2">
+                                <div class="flex flex-col lg:gap-y-2">
+                                    <span x-text="product.title" class="text-xs md:text-sm lg:text-xs font-bold "></span>
+                                    <!--Number of course students -->
+                                    <div class="hidden md:flex  gap-x-4 lg:gap-x-1">
+                                        <div class="flex flex-col justify-start gap-y-2 lg:gap-y-1  text-secondary-color text-s ">
+                                            <div class="flex items-center  gap-x-1 ">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17"
+                                                        fill="none">
+                                                        <path stroke="#6A6C87"
+                                                            d="M2.235 6.467a5.008 5.008 0 0 1 3.732-3.732 8.902 8.902 0 0 1 4.066 0 5.007 5.007 0 0 1 3.732 3.732 8.901 8.901 0 0 1 0 4.066 5.008 5.008 0 0 1-3.732 3.732 8.903 8.903 0 0 1-4.066 0 5.007 5.007 0 0 1-3.732-3.732 8.902 8.902 0 0 1 0-4.066Z" />
+                                                        <path stroke="#6A6C87" stroke-linecap="round"
+                                                            stroke-linejoin="round" d="M9.667 10.167 7.774 8.963V6.5" />
+                                                    </svg>
+                                                </span>
+                                                <span>۴۵</span>
+                                                <span >ساعت</span>
+                                            </div>
+                                            <div class="flex items-center  gap-x-1">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17"
+                                                        fill="none">
+                                                        <path fill="#6A6C87"
+                                                            d="m2.315 9.536.48-.139-.48.14Zm0-4.432-.48-.139.48.14Zm11.37 0 .48-.139-.48.14Zm0 4.432-.48-.139.48.14Zm-2.475 2.302-.094-.49.094.49Zm-6.42 0 .094-.49-.094.49Zm0-9.036-.093-.49.093.49Zm6.42 0 .093-.49-.093.49ZM2.347 9.647l-.48.14.48-.14Zm11.306 0 .48.14-.48-.14Zm0-4.654-.48.14.48-.14Zm-11.306 0 .48.14-.48-.14ZM8.5 12.45a.5.5 0 1 0-1 0h1Zm-1 2.051a.5.5 0 0 0 1 0h-1ZM6.243 14a.5.5 0 0 0 0 1v-1Zm3.514 1a.5.5 0 0 0 0-1v1Zm3.416-9.868.032.111.96-.278-.031-.11-.961.277Zm.032 4.265-.032.112.96.277.033-.11-.96-.279ZM2.827 9.51l-.032-.112-.96.278.031.111.961-.277Zm-.032-4.266.032-.11-.96-.279-.033.111.96.278Zm0 4.154a7.464 7.464 0 0 1 0-4.154l-.96-.278a8.464 8.464 0 0 0 0 4.71l.96-.278Zm10.41-4.154a7.463 7.463 0 0 1 0 4.154l.96.278a8.464 8.464 0 0 0 0-4.71l-.96.278Zm-2.088 6.104a16.694 16.694 0 0 1-6.233 0l-.187.983c2.181.414 4.425.414 6.606 0l-.187-.983ZM4.884 3.293a16.693 16.693 0 0 1 6.232 0l.187-.982a17.693 17.693 0 0 0-6.606 0l.187.982Zm0 8.054c-.996-.189-1.787-.905-2.057-1.838l-.96.277c.378 1.307 1.476 2.286 2.83 2.544l.187-.983Zm6.42.983c1.353-.258 2.451-1.237 2.83-2.544l-.961-.277c-.27.933-1.061 1.649-2.056 1.838l.186.983Zm-.188-9.037c.996.19 1.787.905 2.057 1.84l.96-.279c-.378-1.307-1.476-2.286-2.83-2.543l-.187.982Zm-6.42-.982c-1.353.257-2.451 1.236-2.83 2.543l.961.278c.27-.934 1.061-1.65 2.057-1.839l-.187-.982ZM7.5 12.45V14.5h1v-2.051h-1ZM6.243 15h3.514v-1H6.243v1Z" />
+                                                        <path stroke="#6A6C87" stroke-linecap="round"
+                                                            d="m5.333 8 1.373-1.08c.25-.198.376-.297.514-.28.139.018.235.145.429.399l.702.922c.194.254.29.38.429.398.138.018.264-.08.514-.278L10.667 7" />
+                                                    </svg>
+                                                </span>
+                                                <span>۲۷۰</span>
+                                                <span>جلسه</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col justify-start gap-y-1 text-secondary-color text-s ">
+                                            <div class="flex items-center  gap-x-1 ">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17"
+                                                        fill="none">
+                                                        <path stroke="#6A6C87"
+                                                            d="M2.235 6.467a5.008 5.008 0 0 1 3.732-3.732 8.902 8.902 0 0 1 4.066 0 5.007 5.007 0 0 1 3.732 3.732 8.901 8.901 0 0 1 0 4.066 5.008 5.008 0 0 1-3.732 3.732 8.903 8.903 0 0 1-4.066 0 5.007 5.007 0 0 1-3.732-3.732 8.902 8.902 0 0 1 0-4.066Z" />
+                                                        <path stroke="#6A6C87" stroke-linecap="round"
+                                                            stroke-linejoin="round" d="M9.667 10.167 7.774 8.963V6.5" />
+                                                    </svg>
+                                                </span>
+                                                <span>۱۳۰۰+</span>
+                                                <span>دانشجو</span>
+                                            </div>
+                                            <div class="flex items-center  gap-x-1">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15"
+                                                        fill="none">
+                                                        <path stroke="#F90" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width=".875"
+                                                            d="M7.088 10.125v1.225" />
+                                                        <path stroke="#F90" stroke-miterlimit="10" stroke-width=".875"
+                                                            d="M4.17 13.333h5.834v-.583a1.17 1.17 0 0 0-1.166-1.167h-3.5A1.17 1.17 0 0 0 4.17 12.75v.583Z" />
+                                                        <path stroke="#F90" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width=".875"
+                                                            d="M3.588 13.333h7" />
+                                                        <path fill="#F90" fill-opacity=".2" stroke="#F90"
+                                                            stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width=".875"
+                                                            d="M7 9.833A4.08 4.08 0 0 1 2.917 5.75V4A2.333 2.333 0 0 1 5.25 1.667h3.5A2.333 2.333 0 0 1 11.083 4v1.75A4.08 4.08 0 0 1 7 9.833Z" />
+                                                        <path stroke="#F90" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width=".875"
+                                                            d="M3.19 7.296a2.834 2.834 0 0 1-1.125-.7c-.525-.584-.875-1.284-.875-2.1 0-.817.642-1.459 1.458-1.459h.38a2.19 2.19 0 0 0-.175.875v1.75c0 .584.122 1.132.338 1.634ZM10.81 7.296c.437-.14.822-.397 1.125-.7.525-.584.875-1.284.875-2.1 0-.817-.642-1.459-1.458-1.459h-.38c.117.269.176.566.176.875v1.75a4.11 4.11 0 0 1-.339 1.634Z" />
+                                                    </svg>
+                                                </span>
+                                                <span class="text-orange">چالش های هفتگی</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               <div class="flex justify-end flex-col gap-y-3 pr-2">
+                                 <!-- Avatar section -->
+                                 <div class="hidden md:flex gap-x-1 ">
+                                    <div class="w-5 h-5 rounded-xl">
+                                        <img src="/assets/images/unsplash_O3ymvT7Wf9U.png" alt="">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="text-x text-gray font-light">مدرس دوره</span>
+                                        <span class="text-xs text-slate font-bold">آیلین عبدالمالکی</span>
+                                    </div>
+                                 </div>
+                                <!-- price course -->
+                                <div class="flex gap-x-5  items-center">
+                                    <div class="flex items-center gap-x-2">
+                                        <span x-text="product.price" class="text-blue font-bold text-xs"></span>
+                                        <span class="text-gray text-x">تومان</span>
+                                    </div>
+                                    <!-- trash icon -->
+                                    <span class="cursor-pointer">
+                                        <svg class="w-6 h-6 md:w-7 md:h-7 lg:w-5 lg:h-5 " viewBox="0 0 31 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.7531 16C29.7531 20.9635 28.5125 24.6179 26.0963 27.0341C23.6802 29.4502 20.0258 30.6908 15.0623 30.6908C10.0988 30.6908 6.44435 29.4502 4.0282 27.0341C1.61204 24.6179 0.371422 20.9635 0.371422 16C0.371422 11.0365 1.61204 7.3821 4.0282 4.96594C6.44435 2.54979 10.0988 1.30917 15.0623 1.30917C20.0258 1.30917 23.6802 2.54979 26.0963 4.96594C28.5125 7.3821 29.7531 11.0365 29.7531 16Z"
+                                                stroke="#DFDFE5" stroke-opacity="0.5" stroke-width="0.742843" />
+                                            <path
+                                                d="M9 12.6261C8.72386 12.6261 8.5 12.85 8.5 13.1261C8.5 13.4023 8.72386 13.6261 9 13.6261V12.6261ZM21 13.6261C21.2761 13.6261 21.5 13.4023 21.5 13.1261C21.5 12.85 21.2761 12.6261 21 12.6261V13.6261ZM10.3333 13.1261V12.6261H9.83333V13.1261H10.3333ZM19.6667 13.1261H20.1667V12.6261H19.6667V13.1261ZM19.2279 19.6579L19.7083 19.7966L19.2279 19.6579ZM16.1493 22.3413L16.2326 22.8343H16.2326L16.1493 22.3413ZM13.8507 22.3413L13.934 21.8483L13.934 21.8483L13.8507 22.3413ZM13.7455 22.3235L13.6622 22.8165H13.6622L13.7455 22.3235ZM10.7721 19.6579L10.2917 19.7966L10.7721 19.6579ZM16.2545 22.3235L16.1712 21.8305L16.2545 22.3235ZM12.2284 12.0973L12.6822 12.3071L12.2284 12.0973ZM12.8787 11.2252L12.545 10.8528L12.545 10.8528L12.8787 11.2252ZM13.852 10.6424L14.0259 11.1111V11.1111L13.852 10.6424ZM16.1481 10.6424L16.322 10.1736V10.1736L16.1481 10.6424ZM17.7716 12.0973L18.2255 11.8876L17.7716 12.0973ZM9 13.6261H21V12.6261H9V13.6261ZM16.1712 21.8305L16.066 21.8483L16.2326 22.8343L16.3378 22.8165L16.1712 21.8305ZM13.934 21.8483L13.8288 21.8305L13.6622 22.8165L13.7674 22.8343L13.934 21.8483ZM19.1667 13.1261V16.555H20.1667V13.1261H19.1667ZM10.8333 16.555V13.1261H9.83333V16.555H10.8333ZM19.1667 16.555C19.1667 17.5581 19.0255 18.5562 18.7475 19.5193L19.7083 19.7966C20.0123 18.7433 20.1667 17.6519 20.1667 16.555H19.1667ZM16.066 21.8483C15.3602 21.9676 14.6397 21.9676 13.934 21.8483L13.7674 22.8343C14.5834 22.9722 15.4166 22.9722 16.2326 22.8343L16.066 21.8483ZM13.8288 21.8305C12.6035 21.6235 11.601 20.7267 11.2525 19.5193L10.2917 19.7966C10.7459 21.3698 12.0544 22.5449 13.6622 22.8165L13.8288 21.8305ZM11.2525 19.5193C10.9745 18.5562 10.8333 17.5581 10.8333 16.555H9.83333C9.83333 17.6519 9.98765 18.7433 10.2917 19.7966L11.2525 19.5193ZM16.3378 22.8165C17.9455 22.5449 19.2541 21.3698 19.7083 19.7966L18.7475 19.5193C18.3989 20.7267 17.3965 21.6235 16.1712 21.8305L16.3378 22.8165ZM12.5 13.1261C12.5 12.8469 12.5613 12.5687 12.6822 12.3071L11.7745 11.8875C11.5939 12.2783 11.5 12.6993 11.5 13.1261H12.5ZM12.6822 12.3071C12.8032 12.0453 12.9824 11.8036 13.2124 11.5975L12.545 10.8528C12.2178 11.146 11.955 11.497 11.7745 11.8875L12.6822 12.3071ZM13.2124 11.5975C13.4425 11.3913 13.7185 11.2253 14.0259 11.1111L13.678 10.1736C13.2574 10.3297 12.8721 10.5597 12.545 10.8528L13.2124 11.5975ZM14.0259 11.1111C14.3334 10.997 14.6645 10.9377 15 10.9377V9.93774C14.5475 9.93774 14.0984 10.0176 13.678 10.1736L14.0259 11.1111ZM15 10.9377C15.3355 10.9377 15.6666 10.997 15.9741 11.1111L16.322 10.1736C15.9016 10.0176 15.4525 9.93774 15 9.93774V10.9377ZM15.9741 11.1111C16.2815 11.2253 16.5575 11.3913 16.7876 11.5975L17.455 10.8528C17.1279 10.5597 16.7426 10.3297 16.322 10.1736L15.9741 11.1111ZM16.7876 11.5975C17.0176 11.8036 17.1968 12.0453 17.3178 12.3071L18.2255 11.8876C18.045 11.497 17.7822 11.146 17.455 10.8528L16.7876 11.5975ZM17.3178 12.3071C17.4387 12.5687 17.5 12.8469 17.5 13.1261H18.5C18.5 12.6993 18.4061 12.2783 18.2255 11.8876L17.3178 12.3071ZM10.3333 13.6261H19.6667V12.6261H10.3333V13.6261Z"
+                                                fill="#FF0000" fill-opacity="0.8" />
+                                            <path d="M13.6666 16.4377V19.1044M16.3333 16.4377V19.1044"  stroke="#FF0000"
+                                                stroke-opacity="0.8" stroke-linecap="round" />
+                                        </svg>
+
+
+                                    </span>
+                                </div>
+                               </div>
+                            </div>
+                            <div>
+
+                            </div>
+
+                        </div>
+                    </template>
+                </div>
+
+            </div>
+            <!-- summary section mobil -->
+            <div class="px-4 md:px-0 md:pl-4 col-span-12 md:col-span-4 lg:col-span-2 ">
+                <div class="flex flex-col bg-white rounded-lg w-full h-auto p-4 lg:p-2 text-xs ">
+                    <div class="flex items-center gap-x-2 mb-4">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
+                                <path fill="#555775"
+                                    d="M18.333 5v2.017c0 1.316-.833 2.15-2.15 2.15h-2.85V3.342c0-.925.759-1.675 1.684-1.675a3.35 3.35 0 0 1 2.341.975c.6.608.975 1.441.975 2.358Z" />
+                                <path fill="#555775"
+                                    d="M1.667 5.833V17.5A.83.83 0 0 0 3 18.167L4.425 17.1a.84.84 0 0 1 1.1.083l1.383 1.392a.84.84 0 0 0 1.184 0l1.4-1.4a.826.826 0 0 1 1.083-.075L12 18.167a.835.835 0 0 0 1.333-.667V3.333c0-.916.75-1.666 1.667-1.666H5C2.5 1.667 1.667 3.158 1.667 5v.833Z"
+                                    opacity=".4" />
+                                <path fill="#555775"
+                                    d="M10 8.125H5a.63.63 0 0 1-.625-.625A.63.63 0 0 1 5 6.875h5a.63.63 0 0 1 .625.625.63.63 0 0 1-.625.625ZM9.375 11.458h-3.75A.63.63 0 0 1 5 10.833a.63.63 0 0 1 .625-.625h3.75a.63.63 0 0 1 .625.625.63.63 0 0 1-.625.625Z" />
+                            </svg>
+                        </span>
+                        <span class="text-slate text-sm lg:text-xs font-bold"> پرداخت</span>
+                    </div>
+                    <hr class="border-secondary-color" />
+
+                    <div class="flex justify-between text-xs  text-slate-800 mt-4 ">
+                        <span class="mb-4 text-slate font-bold">جمع دوره ها :</span>
+                        <span class="text-blue font-bold">۴.۲۵۰.۰۰۰+</span>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-800 ">
+                        <span class="mb-4 text-slate  font-bold">تخفیف ها :</span>
+                        <span class="text-red  font-bold">۷۵۰.۰۰۰-</span>
+                    </div>
+
+                    <div class="flex flex-col gap-y-4 items-center justify-center">
+                        <span class="text-slate text-xs">کد تخفیف دارم!</span>
+                        <div
+                            class="text-center rounded-xl cursor-pointer hover:bg-orange font-bold bg-blue text-white w-full px-3 py-3 md:px-2 lg:px-1 lg:py-2">
+                            <span class="text-xs">پرداخت</span>
+                            <span class="text-base mr-1 lg:text-xs">
+                                ۳.۵۰۰.۰۰۰</span>
+                            <span class="text- lg:text-x font-light">تومان</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+
+</html>
